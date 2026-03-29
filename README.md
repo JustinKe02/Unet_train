@@ -76,7 +76,7 @@
 | 学习率调度 | ReduceLROnPlateau | CosineAnnealing |
 | 数据增强 | 随机裁剪 + 翻转旋转 | 前景感知采样 + 翻转旋转 |
 | 混合精度 | 否 | AMP ✅ |
-| 早停 | 否 | patience=12 |
+| 早停 | 否 | patience=12 ✅ |
 
 ## 环境安装
 
