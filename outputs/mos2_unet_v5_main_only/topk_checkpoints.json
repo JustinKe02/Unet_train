@@ -1,0 +1,17 @@
+[
+  {
+    "epoch": 28,
+    "metric": 0.8722473003007614,
+    "path": "/root/autodl-tmp/Unet/outputs/mos2_unet_v5_main_only/checkpoints/topk/epoch028_miou_fg_0.8722.pth"
+  },
+  {
+    "epoch": 34,
+    "metric": 0.8719683626567768,
+    "path": "/root/autodl-tmp/Unet/outputs/mos2_unet_v5_main_only/checkpoints/topk/epoch034_miou_fg_0.8720.pth"
+  },
+  {
+    "epoch": 38,
+    "metric": 0.8577152347520989,
+    "path": "/root/autodl-tmp/Unet/outputs/mos2_unet_v5_main_only/checkpoints/topk/epoch038_miou_fg_0.8577.pth"
+  }
+]

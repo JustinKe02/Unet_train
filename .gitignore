@@ -1,0 +1,29 @@
+/.vscode-ai-images/
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+
+# PyTorch checkpoints (large)
+*.pth
+*.pt
+*.ckpt
+
+# Dataset (too large)
+Mos2_data/
+
+# IDE
+.vscode/
+.idea/
+
+# System
+.DS_Store
+*.swp
+
+# Logs
+*.log
+nohup.out
+
+# Misc
+.gemini/

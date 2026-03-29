@@ -1,0 +1,11 @@
+Official UNet Test Evaluation
+Checkpoint: /root/autodl-tmp/Unet/unet_official/mos2_output/checkpoints/best_model.pth
+Test samples: 18
+
+mIoU     = 0.7779
+mIoU_fg  = 0.7195
+
+IoU_background   = 0.9529
+IoU_monolayer    = 0.5224
+IoU_fewlayer     = 0.6978
+IoU_multilayer   = 0.9383

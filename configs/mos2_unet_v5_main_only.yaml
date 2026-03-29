@@ -1,0 +1,64 @@
+project_name: mos2_unet_v5_main_only
+seed: 42
+output_dir: outputs/mos2_unet_v5_main_only
+
+data:
+  roots:
+    - name: main
+      image_dir: Mos2_data/ori/MoS2
+      mask_dir: Mos2_data/mask
+  image_extensions: [".jpg", ".jpeg", ".png", ".tif", ".tiff"]
+  num_classes: 4
+  class_names: ["background", "monolayer", "fewlayer", "multilayer"]
+  palette:
+    - [0, 0, 0]
+    - [239, 41, 41]
+    - [0, 170, 0]
+    - [114, 159, 207]
+  split_path: splits/mos2_main_only_split.json
+  split_ratios:
+    train: 0.8
+    val: 0.1
+    test: 0.1
+  crop_size: 896
+  eval_stride: 640
+  train_repeat: 4
+  hard_crop_probability: 0.5
+  hard_crop_candidates: 6
+  min_foreground_ratio: 0.01
+  rare_classes: [1, 2]
+  rare_class_weight: 2.0
+
+model:
+  in_channels: 3
+  num_classes: 4
+  base_channels: 32
+  bilinear: true
+
+train:
+  epochs: 100
+  batch_size: 3
+  num_workers: 8
+  learning_rate: 0.00025
+  weight_decay: 0.0001
+  min_lr: 0.000001
+  amp: true
+  max_grad_norm: 1.0
+  log_interval: 10
+  ce_weight: 0.0
+  focal_weight: 0.6
+  focal_gamma: 2.0
+  focal_alpha: [0.2, 1.8, 2.2, 0.6]
+  dice_weight: 0.4
+  tversky_weight: 0.0
+  tversky_alpha: 0.35
+  tversky_beta: 0.65
+  use_class_weights: false
+  save_metric: miou_fg
+  early_stopping_patience: 12
+  early_stopping_min_delta: 0.002
+  early_stopping_warmup: 15
+  top_k_checkpoints: 3
+
+inference:
+  threshold: null
